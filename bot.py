@@ -74,6 +74,15 @@ async def ping(ctx, *, arg=None):
     else:
         await ctx.send(f"Pong! Your argument was {arg}")
 
+@bot.command(name="testembed")
+async def test_embed(ctx):
+    embed = discord.Embed(
+        title="Test Embed",
+        description="This is a test message with an image.",
+        color=0x1DB954
+    )
+    embed.set_image(url="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png")
+    
+    await ctx.send(embed=embed)
 
-# Start the bot, connecting it to the gateway
 bot.run(token)
